@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "312787752983",
+    "project_id": "lecturaviva-809b2",
+    "storage_bucket": "lecturaviva-809b2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312787752983:android:7d5af206ff076a8225a452",
+        "android_client_info": {
+          "package_name": "com.lecturaviva.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMRQS20yDaT5UpiSY_X-_yyf8mPjfXZW8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

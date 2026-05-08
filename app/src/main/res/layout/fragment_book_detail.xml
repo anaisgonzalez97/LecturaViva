@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- CABECERA: portada + info + estado + favorito -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/green_surface"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="52dp"
+                android:paddingBottom="14dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/ivCover"
+                    android:layout_width="72dp"
+                    android:layout_height="104dp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/cd_cover"
+                    android:src="@drawable/logo_lecturaviva"
+                    android:layout_marginEnd="14dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tvTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp"
+                            android:textStyle="bold"/>
+
+                        <ImageButton
+                            android:id="@+id/btnDelete"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_delete"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:tint="#EF9A9A"
+                            android:contentDescription="@string/cd_delete"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvAuthor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginBottom="8dp"/>
+
+                    <Spinner
+                        android:id="@+id/spinnerStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="44dp"
+                        android:background="@drawable/bg_spinner"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginBottom="6dp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageButton
+                            android:id="@+id/btnFavorite"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_favorite_border"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="@string/cd_favorite"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Favorito"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- PROGRESO -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:background="@color/surface_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:id="@+id/tvProgress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/green_med"/>
+
+                    <Button
+                        android:id="@+id/btnUpdateProgress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="Actualizar progreso"
+                        android:textSize="10sp"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="@color/green_med"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"/>
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:max="100"
+                    android:progressTint="@color/green_med"
+                    android:progressBackgroundTint="@color/green_surface"/>
+
+                <TextView
+                    android:id="@+id/tvPages"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_hint"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="8dp" android:background="@color/background"/>
+
+            <!-- SECCIÓN NOTAS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/surface_white"
+                android:padding="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/tab_notes"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/green_dark"/>
+
+                    <Button
+                        android:id="@+id/btnAddNote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="34dp"
+                        android:text="+ Añadir nota"
+                        android:textSize="11sp"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="@color/green_med"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"/>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"/>
+
+                <TextView
+                    android:id="@+id/tvEmptyNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_empty_notes"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_hint"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="8dp" android:background="@color/background"/>
+
+            <!-- SECCIÓN RESEÑA -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/surface_white"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tab_review"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_dark"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_review"
+                    style="@style/Widget.LecturaViva.TextInput"
+                    android:layout_marginBottom="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etReview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#222222"
+                        android:inputType="textMultiLine"
+                        android:minLines="4"
+                        android:maxLines="10"
+                        android:gravity="top"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btnSaveReview"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:text="Guardar reseña"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="@color/green_med"/>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="8dp" android:background="@color/background"/>
+
+            <!-- SECCIÓN VALORACIÓN -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/surface_white"
+                android:padding="14dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tab_rating"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_dark"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_tap_stars"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="10dp"/>
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    android:rating="0"
+                    android:progressTint="@color/star_on"
+                    android:secondaryProgressTint="@color/star_off"
+                    android:progressBackgroundTint="@color/star_off"
+                    android:layout_marginBottom="16dp"/>
+
+                <Button
+                    android:id="@+id/btnSaveRating"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:text="Guardar valoración"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="@color/green_med"/>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="24dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Botón volver flotante — esquina superior izquierda -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="12dp"
+        android:src="@drawable/ic_arrow_back"
+        android:tint="#FFFFFF"
+        android:background="@drawable/bg_btn_back"
+        android:contentDescription="Volver"
+        android:elevation="4dp"
+        android:scaleType="center"
+        android:padding="8dp"/>
+
+</FrameLayout>

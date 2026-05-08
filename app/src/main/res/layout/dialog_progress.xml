@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tvTotalPages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textColor="#555555"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Selector tipo: página o porcentaje -->
+    <RadioGroup
+        android:id="@+id/rgMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/rbPage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Por página"
+            android:textColor="#222222"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rbPercent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Por porcentaje"
+            android:textColor="#222222"/>
+    </RadioGroup>
+
+    <!-- Campo página -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número de páginas leídas"
+        style="@style/Widget.LecturaViva.TextInput">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCurrentPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#222222"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Campo porcentaje (oculto por defecto) -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPercent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Porcentaje leído (0-100)"
+        android:visibility="gone"
+        style="@style/Widget.LecturaViva.TextInput">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPercent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#222222"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment android:id="@+id/homeFragment"
+        android:name="com.lecturaviva.app.ui.home.HomeFragment"
+        android:label="Inicio">
+        <action android:id="@+id/action_home_to_detail"
+            app:destination="@id/bookDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment android:id="@+id/libraryFragment"
+        android:name="com.lecturaviva.app.ui.library.LibraryFragment"
+        android:label="Mis libros">
+        <action android:id="@+id/action_library_to_detail"
+            app:destination="@id/bookDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <argument android:name="filter"
+            app:argType="string"
+            android:defaultValue="All"/>
+    </fragment>
+
+    <fragment android:id="@+id/searchFragment"
+        android:name="com.lecturaviva.app.ui.search.SearchFragment"
+        android:label="Buscar">
+        <action android:id="@+id/action_search_to_detail"
+            app:destination="@id/bookDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment android:id="@+id/profileFragment"
+        android:name="com.lecturaviva.app.ui.profile.ProfileFragment"
+        android:label="Perfil"/>
+
+    <fragment android:id="@+id/bookDetailFragment"
+        android:name="com.lecturaviva.app.ui.detail.BookDetailFragment"
+        android:label="Detalle del libro">
+        <argument android:name="bookId"
+            app:argType="long"/>
+    </fragment>
+</navigation>

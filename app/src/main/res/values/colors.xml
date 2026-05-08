@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta principal Lectura Viva -->
+    <color name="green_dark">#27500A</color>
+    <color name="green_med">#3B6D11</color>
+    <color name="green_light">#6BAE5E</color>
+    <color name="green_surface">#EAF3DE</color>
+    <color name="green_surface2">#D4EDCC</color>
+
+    <!-- Acento rosa -->
+    <color name="pink_light">#F9E0EC</color>
+    <color name="pink_med">#E8A5C0</color>
+    <color name="pink_dark">#B5547A</color>
+
+    <!-- Lila -->
+    <color name="purple_light">#EDE7F6</color>
+    <color name="purple_med">#7B6EAB</color>
+
+    <!-- Superficies -->
+    <color name="background">#FDF6F0</color>
+    <color name="surface_white">#FFFFFF</color>
+    <color name="surface_grey">#F9F9F6</color>
+    <color name="surface_card">#F1EFE8</color>
+
+    <!-- Texto -->
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_secondary">#5F5E5A</color>
+    <color name="text_hint">#AAAAAA</color>
+
+    <!-- Estados feedback -->
+    <color name="success_bg">#EAF3DE</color>
+    <color name="success_text">#2E5E25</color>
+    <color name="error_bg">#FCEBEB</color>
+    <color name="error_text">#A32D2D</color>
+    <color name="info_bg">#E6F1FB</color>
+    <color name="info_text">#185FA5</color>
+    <color name="warning_bg">#FAEEDA</color>
+    <color name="warning_text">#7A4F00</color>
+
+    <!-- Favorito -->
+    <color name="favorite_on">#E53935</color>
+    <color name="favorite_off">#CCCCCC</color>
+
+    <!-- Estrellas -->
+    <color name="star_on">#FFB300</color>
+    <color name="star_off">#DDDDDD</color>
+
+    <!-- Bordes y divisores -->
+    <color name="border_light">#E0E0E0</color>
+    <color name="divider">#EEEEEE</color>
+
+    <!-- MaterialComponents requeridos -->
+    <color name="colorPrimary">@color/green_med</color>
+    <color name="colorPrimaryVariant">@color/green_dark</color>
+    <color name="colorSecondary">@color/pink_dark</color>
+    <color name="colorSecondaryVariant">@color/pink_med</color>
+    <color name="colorOnPrimary">@color/surface_white</color>
+    <color name="colorOnSecondary">@color/surface_white</color>
+    <color name="colorSurface">@color/background</color>
+    <color name="colorOnSurface">@color/text_primary</color>
+    <color name="colorBackground">@color/background</color>
+    <color name="colorError">@color/error_text</color>
+    <color name="splash_background">#EAF3DE</color>
+</resources>

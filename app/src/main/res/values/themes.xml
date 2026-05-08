@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.LecturaViva" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/green_med</item>
+        <item name="colorPrimaryVariant">@color/green_dark</item>
+        <item name="colorSecondary">@color/pink_dark</item>
+        <item name="colorSecondaryVariant">@color/pink_med</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface_white</item>
+        <item name="colorOnPrimary">@color/surface_white</item>
+        <item name="colorOnSecondary">@color/surface_white</item>
+        <item name="colorError">@color/error_text</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:statusBarColor">@color/green_dark</item>
+
+        <!-- TextInputLayout -->
+        <item name="textInputStyle">@style/Widget.LecturaViva.TextInput</item>
+        <!-- BottomNav -->
+        <item name="bottomNavigationStyle">@style/Widget.LecturaViva.BottomNav</item>
+    </style>
+
+    <!-- TextInputLayout redondeado -->
+    <style name="Widget.LecturaViva.TextInput"
+        parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/green_surface2</item>
+        <item name="android:textColorHint">#888888</item>
+        <item name="hintTextColor">@color/green_med</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="hintTextColor">@color/green_med</item>
+    </style>
+
+    <!-- Botón primario verde -->
+    <style name="Widget.LecturaViva.Button"
+        parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/green_med</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/surface_white</item>
+    </style>
+
+    <!-- Botón outline -->
+    <style name="Widget.LecturaViva.Button.Outline"
+        parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/green_med</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textColor">@color/green_med</item>
+    </style>
+
+    <!-- Botón de texto/enlace -->
+    <style name="Widget.LecturaViva.Button.Text"
+        parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/green_med</item>
+    </style>
+
+    <!-- BottomNavigationView -->
+    <style name="Widget.LecturaViva.BottomNav"
+        parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="backgroundTint">@color/surface_white</item>
+        <item name="itemIconTint">@color/selector_bottom_nav</item>
+        <item name="itemTextColor">@color/selector_bottom_nav</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="elevation">8dp</item>
+    </style>
+
+    <!-- Card estilo app -->
+    <style name="Widget.LecturaViva.Card"
+        parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardBackgroundColor">@color/surface_white</item>
+    </style>
+
+    <!-- Card estadística -->
+    <style name="Widget.LecturaViva.Card.Stat"
+        parent="Widget.LecturaViva.Card">
+        <item name="cardCornerRadius">14dp</item>
+        <item name="cardElevation">1dp</item>
+    </style>
+
+    <!-- Chip filtro -->
+    <style name="Widget.LecturaViva.Chip"
+        parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipCornerRadius">20dp</item>
+        <item name="chipBackgroundColor">@color/selector_chip_bg</item>
+        <item name="android:textColor">@color/selector_chip_text</item>
+        <item name="chipStrokeColor">@color/green_surface2</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textSize">11sp</item>
+
+    </style>
+
+    <!-- Base obligatorio para que AAPT resuelva la cadena de herencia -->
+    <style name="TextAppearance.LecturaViva" parent="android:TextAppearance">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- Texto grandes números estadísticas -->
+    <style name="TextAppearance.LecturaViva.StatNumber" parent="android:TextAppearance">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/green_dark</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.LecturaViva.StatLabel" parent="android:TextAppearance">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <!-- Overlay para diálogos — fuerza texto negro sobre fondo blanco -->
+    <style name="ThemeOverlay.LecturaViva.Dialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:textColor">#FF000000</item>
+        <item name="android:textColorPrimary">#FF000000</item>
+        <item name="android:textColorSecondary">#FF666666</item>
+        <item name="android:background">#FFFFFFFF</item>
+        <item name="colorSurface">#FFFFFFFF</item>
+        <item name="colorOnSurface">#FF000000</item>
+    </style>
+
+    <!-- Tema para AuthActivity — fuerza modo claro, texto siempre negro -->
+    <style name="Theme.LecturaViva.Auth" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/green_med</item>
+        <item name="colorPrimaryVariant">@color/green_dark</item>
+        <item name="colorSecondary">@color/pink_dark</item>
+        <item name="android:colorBackground">#FFFFFF</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="android:textColor">#222222</item>
+        <item name="android:textColorPrimary">#222222</item>
+        <item name="android:textColorSecondary">#666666</item>
+        <item name="android:textColorHint">#AAAAAA</item>
+        <item name="android:editTextColor">#222222</item>
+        <item name="editTextColor">#222222</item>
+        <item name="colorOnSurface">#222222</item>
+        <item name="textInputStyle">@style/Widget.LecturaViva.TextInput</item>
+        <item name="android:statusBarColor">@color/green_dark</item>
+    </style>
+
+    <!-- Splash Screen -->
+    <style name="Theme.LecturaViva.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo_lecturaviva</item>
+        <item name="postSplashScreenTheme">@style/Theme.LecturaViva</item>
+    </style>
+
+
+</resources>

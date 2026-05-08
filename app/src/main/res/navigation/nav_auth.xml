@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_auth"
+    app:startDestination="@id/loginFragment">
+
+    <fragment android:id="@+id/loginFragment"
+        android:name="com.lecturaviva.app.ui.auth.LoginFragment"
+        android:label="Inicio de sesión">
+        <action android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment"/>
+        <action android:id="@+id/action_login_to_recover"
+            app:destination="@id/recoverFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/registerFragment"
+        android:name="com.lecturaviva.app.ui.auth.RegisterFragment"
+        android:label="Crear cuenta"/>
+
+    <fragment android:id="@+id/recoverFragment"
+        android:name="com.lecturaviva.app.ui.auth.RecoverFragment"
+        android:label="Recuperar contraseña"/>
+</navigation>

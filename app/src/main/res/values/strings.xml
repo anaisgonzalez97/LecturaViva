@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lectura Viva</string>
+    <string name="app_tagline">Tu diario de lectura personal</string>
+
+    <!-- Auth -->
+    <string name="label_email">Correo electr&#xF3;nico</string>
+    <string name="label_password">Contrase&#xF1;a</string>
+    <string name="label_name">Nombre completo</string>
+    <string name="btn_login">Iniciar sesi&#xF3;n</string>
+    <string name="btn_create_account">Crear cuenta</string>
+    <string name="btn_register">Registrarse</string>
+    <string name="btn_send_link">Enviar enlace</string>
+    <string name="link_forgot_password">&#xBF;Olvidaste tu contrase&#xF1;a? Recuperar</string>
+    <string name="link_go_login">&#xBF;Ya tienes cuenta? Inicia sesi&#xF3;n</string>
+    <string name="title_recover">Recuperar contrase&#xF1;a</string>
+    <string name="desc_recover">Introduce tu correo y te enviaremos un enlace para restablecer tu contrase&#xF1;a.</string>
+
+    <!-- Home -->
+    <string name="title_home">Inicio</string>
+    <string name="label_reading_now">Leyendo ahora</string>
+    <string name="label_no_book">No est&#xE1;s leyendo ning&#xFA;n libro ahora mismo.\n&#xA1;Busca uno y empieza a leer!</string>
+    <string name="label_my_stats">Mis estad&#xED;sticas</string>
+    <string name="btn_update_progress">Actualizar progreso</string>
+    <string name="stat_read">Le&#xED;dos</string>
+    <string name="stat_reading">Leyendo</string>
+    <string name="stat_pending">Pendientes</string>
+    <string name="stat_favorites">Favoritos</string>
+
+    <!-- Library -->
+    <string name="title_library">Mis libros</string>
+    <string name="chip_all">Todos</string>
+    <string name="chip_reading">Leyendo</string>
+    <string name="chip_pending">Pendientes</string>
+    <string name="chip_read">Le&#xED;dos</string>
+    <string name="chip_favorites">Favoritos</string>
+    <string name="chip_abandoned">Abandonados</string>
+    <string name="hint_search_books">Buscar en mis libros&#x2026;</string>
+    <string name="label_empty_library">Tu biblioteca est&#xE1; vac&#xED;a.\n&#xA1;Busca tu primer libro!</string>
+    <string name="label_empty_filter">No tienes libros en este estado.</string>
+
+    <!-- Search -->
+    <string name="title_search">Buscar libros</string>
+    <string name="hint_search">T&#xED;tulo o autor&#x2026;</string>
+    <string name="btn_search">Buscar</string>
+    <string name="chip_cat_all">Todos</string>
+    <string name="chip_cat_fantasy">Fantas&#xED;a</string>
+    <string name="chip_cat_scifi">Sci-Fi</string>
+    <string name="chip_cat_thriller">Thriller</string>
+    <string name="chip_cat_classic">Cl&#xE1;sico</string>
+    <string name="chip_cat_nonfiction">No ficci&#xF3;n</string>
+    <string name="chip_cat_romance">Romance</string>
+    <string name="chip_cat_horror">Terror</string>
+    <string name="label_in_library">En biblioteca</string>
+    <string name="btn_add">+ A&#xF1;adir</string>
+    <string name="label_empty_search">Escribe un t&#xED;tulo o autor y pulsa Buscar.</string>
+    <string name="label_no_results">No se encontraron resultados para tu b&#xFA;squeda.</string>
+
+    <!-- Detail -->
+    <string name="title_detail">Detalle del libro</string>
+    <string name="tab_notes">Notas</string>
+    <string name="tab_review">Rese&#xF1;a</string>
+    <string name="tab_rating">Valoraci&#xF3;n</string>
+    <string name="hint_review">Escribe aqu&#xED; tu opini&#xF3;n sobre el libro&#x2026;</string>
+    <string name="btn_save_review">Guardar rese&#xF1;a</string>
+    <string name="btn_add_note">+ A&#xF1;adir nota</string>
+    <string name="label_empty_notes">A&#xFA;n no has a&#xF1;adido notas a este libro.</string>
+    <string name="label_tap_stars">Toca las estrellas para valorar</string>
+    <string name="btn_save_rating">Guardar valoraci&#xF3;n</string>
+
+    <!-- Profile -->
+    <string name="title_profile">Mi perfil</string>
+    <string name="btn_edit_profile">Editar perfil</string>
+    <string name="btn_sync">Sincronizar con la nube</string>
+    <string name="btn_report">Reportar un problema</string>
+    <string name="btn_logout">Cerrar sesi&#xF3;n</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_progress_title">Actualizar progreso</string>
+    <string name="dialog_note_title">A&#xF1;adir nota</string>
+    <string name="hint_pages">N&#xFA;mero de p&#xE1;ginas le&#xED;das</string>
+    <string name="hint_note">Escribe tu nota aqu&#xED;&#x2026;</string>
+    <string name="btn_save">Guardar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="btn_accept">Aceptar</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Inicio</string>
+    <string name="nav_library">Mis libros</string>
+    <string name="nav_search">Buscar</string>
+    <string name="nav_profile">Perfil</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_cover">Portada del libro</string>
+    <string name="cd_favorite">Marcar como favorito</string>
+    <string name="cd_delete">Eliminar libro</string>
+    <string name="cd_avatar">Foto de perfil</string>
+</resources>

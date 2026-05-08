@@ -1,0 +1,75 @@
+[versions]
+agp                 = "8.5.2"
+kotlin              = "2.1.0"
+coreKtx             = "1.13.1"
+appcompat           = "1.7.0"
+material            = "1.12.0"
+constraintlayout    = "2.1.4"
+lifecycle           = "2.8.3"
+navigation          = "2.7.7"
+room                = "2.7.0"
+hilt                = "2.56.2"
+retrofit            = "2.11.0"
+okhttp              = "4.12.0"
+glide               = "4.16.0"
+firebase            = "33.1.1"
+coroutines          = "1.8.1"
+viewpager2          = "1.1.0"
+circleimageview     = "3.1.0"
+
+[libraries]
+splashscreen = { module = "androidx.core:core-splashscreen", version = "1.0.1" }
+# AndroidX
+core-ktx            = { group = "androidx.core",           name = "core-ktx",               version.ref = "coreKtx" }
+appcompat           = { group = "androidx.appcompat",      name = "appcompat",              version.ref = "appcompat" }
+material            = { group = "com.google.android.material", name = "material",           version.ref = "material" }
+constraintlayout    = { group = "androidx.constraintlayout",  name = "constraintlayout",   version.ref = "constraintlayout" }
+viewpager2          = { group = "androidx.viewpager2",     name = "viewpager2",             version.ref = "viewpager2" }
+
+
+# Lifecycle / ViewModel / LiveData
+lifecycle-viewmodel = { group = "androidx.lifecycle",      name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-livedata  = { group = "androidx.lifecycle",      name = "lifecycle-livedata-ktx",  version.ref = "lifecycle" }
+lifecycle-runtime   = { group = "androidx.lifecycle",      name = "lifecycle-runtime-ktx",   version.ref = "lifecycle" }
+
+# Navigation
+navigation-fragment = { group = "androidx.navigation",     name = "navigation-fragment-ktx", version.ref = "navigation" }
+navigation-ui       = { group = "androidx.navigation",     name = "navigation-ui-ktx",       version.ref = "navigation" }
+
+# Room
+room-runtime        = { group = "androidx.room",           name = "room-runtime",            version.ref = "room" }
+room-ktx            = { group = "androidx.room",           name = "room-ktx",                version.ref = "room" }
+room-compiler       = { group = "androidx.room",           name = "room-compiler",           version.ref = "room" }
+
+# Hilt (DI)
+hilt-android        = { group = "com.google.dagger",       name = "hilt-android",            version.ref = "hilt" }
+hilt-compiler       = { group = "com.google.dagger",       name = "hilt-android-compiler",   version.ref = "hilt" }
+
+# Retrofit + OkHttp
+retrofit            = { group = "com.squareup.retrofit2",  name = "retrofit",                version.ref = "retrofit" }
+retrofit-gson       = { group = "com.squareup.retrofit2",  name = "converter-gson",          version.ref = "retrofit" }
+okhttp-logging      = { group = "com.squareup.okhttp3",    name = "logging-interceptor",     version.ref = "okhttp" }
+
+# Glide (imágenes)
+glide               = { group = "com.github.bumptech.glide", name = "glide",               version.ref = "glide" }
+glide-compiler      = { group = "com.github.bumptech.glide", name = "compiler",            version.ref = "glide" }
+
+# Firebase
+firebase-bom        = { group = "com.google.firebase",     name = "firebase-bom",            version.ref = "firebase" }
+firebase-auth       = { group = "com.google.firebase",     name = "firebase-auth-ktx" }
+firebase-firestore  = { group = "com.google.firebase",     name = "firebase-firestore-ktx" }
+
+# Coroutines
+coroutines-android  = { group = "org.jetbrains.kotlinx",  name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+coroutines-play     = { group = "org.jetbrains.kotlinx",  name = "kotlinx-coroutines-play-services", version.ref = "coroutines" }
+
+# CircleImageView
+circleimageview     = { group = "de.hdodenhof",            name = "circleimageview",          version.ref = "circleimageview" }
+
+[plugins]
+android-application = { id = "com.android.application",                  version.ref = "agp" }
+kotlin-android      = { id = "org.jetbrains.kotlin.android",             version.ref = "kotlin" }
+kotlin-kapt         = { id = "org.jetbrains.kotlin.kapt",                version.ref = "kotlin" }
+hilt                = { id = "com.google.dagger.hilt.android",           version.ref = "hilt" }
+google-services     = { id = "com.google.gms.google-services",           version = "4.4.2" }
+safe-args           = { id = "androidx.navigation.safeargs.kotlin",      version.ref = "navigation" }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tipo"
+        style="@style/Widget.LecturaViva.TextInput"
+        android:layout_marginBottom="14dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etReportType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#222222"
+            android:hint="Bug / Sugerencia / Otro"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descripción"
+        style="@style/Widget.LecturaViva.TextInput">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etReportMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#222222"
+            android:inputType="textMultiLine"
+            android:minLines="4"
+            android:maxLines="8"
+            android:gravity="top"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>
