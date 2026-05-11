@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import com.lecturaviva.app.R
 import com.lecturaviva.app.databinding.FragmentLoginBinding
 import com.lecturaviva.app.ui.common.showErrorDialog
+import com.lecturaviva.app.ui.common.showSuccessDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -44,8 +45,15 @@ class LoginFragment : Fragment() {
                 is AuthState.Loading -> b.btnLogin.isEnabled = false
                 is AuthState.Success -> {
                     b.btnLogin.isEnabled = true
-                    (activity as? AuthActivity)?.goToMain()
+                    val nombre = vm.currentUserName()
+                    showSuccessDialog(
+                        "¡Bienvenido/a, $nombre!",
+                        "Has iniciado sesión correctamente."
+                    ) {
+                        (activity as? AuthActivity)?.goToMain()
+                    }
                 }
+
                 is AuthState.Error -> {
                     b.btnLogin.isEnabled = true
                     showErrorDialog("Error al iniciar sesión", state.message)

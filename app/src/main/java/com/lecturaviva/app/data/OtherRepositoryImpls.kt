@@ -32,7 +32,7 @@ class AuthRepositoryImpl @Inject constructor(
         val result = auth.signInWithEmailAndPassword(email, password).await()
         val u = result.user!!
         Result.Success(User(uid = u.uid, name = u.displayName ?: "", email = u.email ?: ""))
-    }.getOrElse { Result.Error(it.message ?: "Error al iniciar sesión") }
+    }.getOrElse { Result.Error(traducirError(it.message)) }
 
     override suspend fun register(name: String, email: String, password: String): Result<User> = runCatching {
         val result = auth.createUserWithEmailAndPassword(email, password).await()
@@ -40,7 +40,7 @@ class AuthRepositoryImpl @Inject constructor(
         val profileUpdates = UserProfileChangeRequest.Builder().setDisplayName(name).build()
         u.updateProfile(profileUpdates).await()
         Result.Success(User(uid = u.uid, name = name, email = u.email ?: ""))
-    }.getOrElse { Result.Error(it.message ?: "Error al crear la cuenta") }
+    }.getOrElse { Result.Error(traducirError(it.message)) }
 
     override suspend fun sendPasswordResetEmail(email: String): Result<Unit> = runCatching {
         auth.sendPasswordResetEmail(email).await()
@@ -70,6 +70,25 @@ class AuthRepositoryImpl @Inject constructor(
     }.getOrElse { Result.Error(it.message ?: "Error al actualizar perfil") }
 
     override fun logout() { auth.signOut() }
+}
+private fun traducirError(message: String?): String {
+    return when {
+        message == null                               -> "Error desconocido."
+        message.contains("badly formatted")           -> "El formato del correo no es válido."
+        message.contains("INVALID_LOGIN_CREDENTIALS") -> "Correo o contraseña incorrectos."
+        message.contains("wrong-password")            -> "La contraseña es incorrecta."
+        message.contains("invalid-credential")        -> "Correo o contraseña incorrectos."
+        message.contains("weak-password")             -> "La contraseña es demasiado débil."
+        message.contains("too-many-requests")         -> "Demasiados intentos. Espera unos minutos."
+        message.contains("network")                   -> "Sin conexión a internet."
+        message.contains("user-disabled")             -> "Esta cuenta ha sido desactivada."
+        message.contains("already in use")          -> "Ya existe una cuenta con ese correo."
+        message.contains("supplied auth credential is incorrect") -> "Correo o contraseña incorrectos."
+        message.contains("malformed or has expired")              -> "Correo o contraseña incorrectos."
+
+
+        else                                          -> "Error al conectar. Inténtalo de nuevo."
+    }
 }
 
 // ── Notes ─────────────────────────────────────────────────────────────────

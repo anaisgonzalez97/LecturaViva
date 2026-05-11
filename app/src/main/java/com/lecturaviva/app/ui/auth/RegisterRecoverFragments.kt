@@ -43,7 +43,7 @@ class RegisterFragment : Fragment() {
                 is AuthState.Loading    -> b.btnRegister.isEnabled = false
                 is AuthState.Registered -> {
                     b.btnRegister.isEnabled = true
-                    showSuccessDialog("¡Bienvenid@!", "Tu cuenta se ha creado correctamente.") {
+                    showSuccessDialog("¡Bienvenido/a!", "Tu cuenta se ha creado correctamente.") {
                         (activity as? AuthActivity)?.goToMain()
                     }
                 }

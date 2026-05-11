@@ -74,6 +74,7 @@ class AuthViewModel @Inject constructor(
     }
 
     fun resetState() { _authState.value = AuthState.Idle }
+    fun currentUserName(): String = authRepo.currentUser?.name ?: "usuario"
 }
 
 sealed class AuthState {
