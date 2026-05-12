@@ -11,7 +11,7 @@ data class NoteEntity(
     val bookId: Long,
     val text: String,
     val chapter: Int = 0,    // 0 = no especificado
-    val page: Int = 0,       // 0 = no especificada
+    val page: Int = 0,
     val createdAt: Long = System.currentTimeMillis()
 ) {
     fun toDomain() = Note(id = id, bookId = bookId, text = text, chapter = chapter, page = page, createdAt = createdAt)

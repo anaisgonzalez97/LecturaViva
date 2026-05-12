@@ -16,6 +16,8 @@ firebase            = "33.1.1"
 coroutines          = "1.8.1"
 viewpager2          = "1.1.0"
 circleimageview     = "3.1.0"
+navigationFragmentKtx = "2.9.8"
+navigationUiKtx = "2.9.8"
 
 [libraries]
 splashscreen = { module = "androidx.core:core-splashscreen", version = "1.0.1" }
@@ -65,6 +67,8 @@ coroutines-play     = { group = "org.jetbrains.kotlinx",  name = "kotlinx-corout
 
 # CircleImageView
 circleimageview     = { group = "de.hdodenhof",            name = "circleimageview",          version.ref = "circleimageview" }
+navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 
 [plugins]
 android-application = { id = "com.android.application",                  version.ref = "agp" }

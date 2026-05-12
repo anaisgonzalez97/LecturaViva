@@ -119,7 +119,6 @@ class BookRepositoryImpl @Inject constructor(
                         ))
                     }
                 } else {
-                    // No existe — insertar solo si no hay duplicado por openLibraryKey
                     val openLibraryKey = doc.getString("openLibraryKey") ?: ""
                     val existingByKey = if (openLibraryKey.isNotEmpty())
                         bookDao.getBookByOpenLibraryKey(userId, openLibraryKey) else null

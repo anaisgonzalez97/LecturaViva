@@ -27,8 +27,8 @@ class ReportRepositoryImpl @Inject constructor() : ReportRepository {
                 put("user_email",   report.userEmail)
                 put("report_type",  report.type)
                 put("message",      report.message)
-                put("name",         report.userEmail) // From Name en la plantilla
-                put("email",        report.userEmail) // Reply To en la plantilla
+                put("name",         report.userEmail)
+                put("email",        report.userEmail)
             }
 
             val body = JSONObject().apply {
