@@ -85,7 +85,7 @@ class HomeFragment : Fragment() {
                 androidx.core.os.bundleOf("filter" to LibraryFilter.Favorites.name))
         }
 
-        // Resultado de actualizar progreso
+        //resultado actualizar progreso
         lifecycleScope.launch {
             vm.updateResult.collectLatest { result ->
                 result ?: return@collectLatest

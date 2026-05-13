@@ -20,7 +20,7 @@ class SearchViewModel @Inject constructor(
     private val auth: FirebaseAuth
 ) : ViewModel() {
 
-    // userId se lee en el momento de usarlo, nunca en init
+
     private val userId get() = auth.currentUser?.uid ?: ""
 
     private val _results   = MutableLiveData<List<Book>>(emptyList())
@@ -37,6 +37,8 @@ class SearchViewModel @Inject constructor(
 
     init { loadLibraryKeys() }
 
+
+    //actualizar claves openlibray de libros que ya están en la biblioteca
     private fun loadLibraryKeys() {
         viewModelScope.launch {
             bookRepo.getAllBooks(userId).collect { books ->

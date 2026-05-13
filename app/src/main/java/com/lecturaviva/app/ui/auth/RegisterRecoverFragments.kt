@@ -11,7 +11,7 @@ import com.lecturaviva.app.ui.common.showErrorDialog
 import com.lecturaviva.app.ui.common.showSuccessDialog
 import dagger.hilt.android.AndroidEntryPoint
 
-// ── RegisterFragment ──────────────────────────────────────────────────────────
+// ====== REGISTERFRAGMENT ======
 @AndroidEntryPoint
 class RegisterFragment : Fragment() {
 
@@ -59,7 +59,7 @@ class RegisterFragment : Fragment() {
     override fun onDestroyView() { super.onDestroyView(); _b = null }
 }
 
-// ── RecoverFragment ───────────────────────────────────────────────────────────
+// ====== RECOVERFRAGMENT ======
 @AndroidEntryPoint
 class RecoverFragment : Fragment() {
 

@@ -96,7 +96,6 @@ fun Fragment.showConfirmDialog(
         .show()
 }
 
-// Ahora devuelve texto, capítulo y página
 fun Fragment.showAddNoteDialog(onSave: (text: String, chapter: Int, page: Int) -> Unit) {
     val context = requireContext()
     val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_add_note, null)

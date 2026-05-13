@@ -17,7 +17,6 @@ class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // isLoggedIn es propiedad, no función — sin paréntesis
         if (vm.isLoggedIn) {
             goToMain()
             return

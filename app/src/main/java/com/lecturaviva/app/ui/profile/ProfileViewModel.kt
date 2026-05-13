@@ -71,7 +71,7 @@ class ProfileViewModel @Inject constructor(
             }
         }
     }
-
+//sincronizar con la nube
     fun syncFromCloud() {
         viewModelScope.launch {
             bookRepo.syncFromFirestore(userId)

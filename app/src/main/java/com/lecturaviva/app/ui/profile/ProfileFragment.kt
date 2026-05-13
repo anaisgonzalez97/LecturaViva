@@ -79,7 +79,7 @@ class ProfileFragment : Fragment() {
             }
         }
     }
-
+//actualizar pantalla con datos actuales
     private fun refreshUi() {
         val user = vm.currentUser
         b.tvName.text  = user?.name  ?: ""

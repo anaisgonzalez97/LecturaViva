@@ -17,7 +17,7 @@ import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 import javax.inject.Singleton
 
-// ── Auth ─────────────────────────────────────────────────────────────────
+// ====== AUTH ======
 @Singleton
 class AuthRepositoryImpl @Inject constructor(
     private val auth: FirebaseAuth
@@ -32,7 +32,7 @@ class AuthRepositoryImpl @Inject constructor(
         val result = auth.signInWithEmailAndPassword(email, password).await()
         val u = result.user!!
         Result.Success(User(uid = u.uid, name = u.displayName ?: "", email = u.email ?: ""))
-    }.getOrElse { Result.Error(traducirError(it.message)) }
+    }.getOrElse { Result.Error(translateErrorMessages(it.message)) }
 
     override suspend fun register(name: String, email: String, password: String): Result<User> = runCatching {
         val result = auth.createUserWithEmailAndPassword(email, password).await()
@@ -40,7 +40,7 @@ class AuthRepositoryImpl @Inject constructor(
         val profileUpdates = UserProfileChangeRequest.Builder().setDisplayName(name).build()
         u.updateProfile(profileUpdates).await()
         Result.Success(User(uid = u.uid, name = name, email = u.email ?: ""))
-    }.getOrElse { Result.Error(traducirError(it.message)) }
+    }.getOrElse { Result.Error(translateErrorMessages(it.message)) }
 
     override suspend fun sendPasswordResetEmail(email: String): Result<Unit> = runCatching {
         auth.sendPasswordResetEmail(email).await()
@@ -71,7 +71,7 @@ class AuthRepositoryImpl @Inject constructor(
 
     override fun logout() { auth.signOut() }
 }
-private fun traducirError(message: String?): String {
+private fun translateErrorMessages(message: String?): String {
     return when {
         message == null                               -> "Error desconocido."
         message.contains("badly formatted")           -> "El formato del correo no es válido."
@@ -91,7 +91,7 @@ private fun traducirError(message: String?): String {
     }
 }
 
-// ── Notes ─────────────────────────────────────────────────────────────────
+// ====== NOTES ======
 @Singleton
 class NoteRepositoryImpl @Inject constructor(
     private val noteDao: NoteDao
@@ -107,7 +107,7 @@ class NoteRepositoryImpl @Inject constructor(
         noteDao.deleteNote(NoteEntity.fromDomain(note))
 }
 
-// ── Search ────────────────────────────────────────────────────────────────
+// ====== SEARCH ======
 @Singleton
 class SearchRepositoryImpl @Inject constructor(
     private val api: OpenLibraryApi

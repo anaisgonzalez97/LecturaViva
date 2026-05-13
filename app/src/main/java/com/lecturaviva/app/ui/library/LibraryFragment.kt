@@ -35,14 +35,14 @@ class LibraryFragment : Fragment() {
         b.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         b.recyclerView.adapter = adapter
 
-        // Filtro desde argumentos (viniendo de Home al pulsar estadística)
+        //filtro viniendo de home al pulsar estadísticas
         arguments?.getString("filter")?.let { filterName ->
             val f = LibraryFilter.entries.find { it.name == filterName } ?: LibraryFilter.All
             vm.setFilter(f)
             selectChip(f)
         }
 
-        // Chips
+        //chips
         b.chipAll.setOnClickListener       { vm.setFilter(LibraryFilter.All);       selectChip(LibraryFilter.All) }
         b.chipReading.setOnClickListener   { vm.setFilter(LibraryFilter.Reading);   selectChip(LibraryFilter.Reading) }
         b.chipPending.setOnClickListener   { vm.setFilter(LibraryFilter.Pending);   selectChip(LibraryFilter.Pending) }
@@ -50,10 +50,10 @@ class LibraryFragment : Fragment() {
         b.chipFavorites.setOnClickListener { vm.setFilter(LibraryFilter.Favorites); selectChip(LibraryFilter.Favorites) }
         b.chipAbandoned.setOnClickListener { vm.setFilter(LibraryFilter.Abandoned); selectChip(LibraryFilter.Abandoned) }
 
-        // Buscador
+        //buscador
         b.etSearch.doAfterTextChanged { vm.setQuery(it?.toString() ?: "") }
 
-        // Lista
+        //lista
         vm.books.observe(viewLifecycleOwner) { books ->
             adapter.submitList(books)
             b.tvEmpty.visibility = if (books.isEmpty()) View.VISIBLE else View.GONE

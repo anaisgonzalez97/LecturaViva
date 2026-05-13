@@ -27,7 +27,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-    // ── Room ─────────────────────────────────────────────────────────────
+    // ====== ROOM ======
     @Provides @Singleton
     fun provideDatabase(@ApplicationContext ctx: Context): LecturaVivaDatabase =
         Room.databaseBuilder(ctx, LecturaVivaDatabase::class.java, "lectura_viva.db")
@@ -38,11 +38,11 @@ object AppModule {
     @Provides fun provideBookDao(db: LecturaVivaDatabase): BookDao = db.bookDao()
     @Provides fun provideNoteDao(db: LecturaVivaDatabase): NoteDao = db.noteDao()
 
-    // ── Firebase ─────────────────────────────────────────────────────────
+    // ====== FIREBASE ======
     @Provides @Singleton fun provideFirebaseAuth(): FirebaseAuth = FirebaseAuth.getInstance()
     @Provides @Singleton fun provideFirestore(): FirebaseFirestore = FirebaseFirestore.getInstance()
 
-    // ── Retrofit ──────────────────────────────────────────────────────────
+    // ====== RETROFIT ======
     @Provides @Singleton
     fun provideOkHttp(): OkHttpClient = OkHttpClient.Builder()
         .addInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY })
@@ -61,7 +61,7 @@ object AppModule {
     fun provideOpenLibraryApi(retrofit: Retrofit): OpenLibraryApi =
         retrofit.create(OpenLibraryApi::class.java)
 
-    // ── Repositories ──────────────────────────────────────────────────────
+    // ====== REPOSITORIES ======
     @Provides @Singleton
     fun provideBookRepository(bookDao: BookDao, firestore: FirebaseFirestore): BookRepository =
         BookRepositoryImpl(bookDao, firestore)

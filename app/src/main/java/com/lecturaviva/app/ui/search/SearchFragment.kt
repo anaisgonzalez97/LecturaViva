@@ -46,13 +46,13 @@ class SearchFragment : Fragment() {
         b.recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(requireContext())
         b.recyclerView.adapter = adapter
 
-        // Búsqueda por texto
+        //búsqueda por texto
         b.btnSearch.setOnClickListener { doSearch() }
         b.etSearch.setOnEditorActionListener { _, action, _ ->
             if (action == EditorInfo.IME_ACTION_SEARCH) { doSearch(); true } else false
         }
 
-        // Chips de categoría
+        //chips de categoría
         val catChips = mapOf(
             b.chipAll       to null,
             b.chipFantasy   to "fantasy",
@@ -98,7 +98,7 @@ class SearchFragment : Fragment() {
             }
         }
     }
-
+//recoge texto del buscador y hace búsqueda
     private fun doSearch() {
         val q = b.etSearch.text.toString().trim()
         if (q.isNotBlank()) vm.search(q)

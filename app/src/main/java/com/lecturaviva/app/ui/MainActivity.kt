@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHost.navController
 
-        // Ocultar barra inferior en BookDetail
+        //para ocultar barra inferior en BookDetail
         navController.addOnDestinationChangedListener { _, destination, _ ->
             binding.bottomNav.visibility = when (destination.id) {
                 R.id.bookDetailFragment -> android.view.View.GONE
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Navegación entre tabs — siempre limpia el backstack hasta Home
+
         binding.bottomNav.setOnItemSelectedListener { item ->
             val navOptions = NavOptions.Builder()
                 .setPopUpTo(R.id.homeFragment, false)
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        // Tap largo en tab ya activo: vuelve al inicio de ese tab
+
         binding.bottomNav.setOnItemReselectedListener { item ->
             val navOptions = NavOptions.Builder()
                 .setPopUpTo(item.itemId, true)
