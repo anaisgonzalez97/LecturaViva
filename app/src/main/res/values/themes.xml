@@ -13,11 +13,10 @@
         <item name="colorError">@color/error_text</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:statusBarColor">@color/green_dark</item>
-
-        <!-- TextInputLayout -->
         <item name="textInputStyle">@style/Widget.LecturaViva.TextInput</item>
-        <!-- BottomNav -->
         <item name="bottomNavigationStyle">@style/Widget.LecturaViva.BottomNav</item>
+        <item name="android:editTextColor">#222222</item>
+        <item name="editTextColor">#222222</item>
     </style>
 
     <!-- TextInputLayout redondeado -->
