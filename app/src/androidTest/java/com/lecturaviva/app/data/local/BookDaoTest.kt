@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -23,7 +24,7 @@ class BookDaoTest {
 
     @Before
     fun setUp() {
-        // Base de datos temporal en memoria — no afecta a los datos reales
+        // Base de datos temporal en memoria, no afecta a los datos reales
         val context = ApplicationProvider.getApplicationContext<Context>()
         db = Room.inMemoryDatabaseBuilder(context, LecturaVivaDatabase::class.java)
             .allowMainThreadQueries()
@@ -58,5 +59,26 @@ class BookDaoTest {
             "El dia que dejo de nevar en Alaska", libros[0].title)
         assertEquals("El autor debe coincidir", "Alice Kellen", libros[0].author)
         assertEquals("El estado debe ser READ", "READ", libros[0].status)
+    }
+
+
+
+    @Test
+    fun buscarLibroPorFirebaseIdDevuelveLibroCorrecto() = runBlocking {
+        // insertamos un libro con firebaseId asignado, como ocurre tras sincronizar con Firestore
+        val libro = BookEntity(
+            userId     = "user123",
+            title      = "Never Lie",
+            author     = "Freida McFadden",
+            status     = "PENDING",
+            firebaseId = "firebase_doc_abc123")
+        bookDao.insertBook(libro)
+
+        // buscamos por firebaseId, igual que hace syncFromFirestore para evitar duplicados
+        val resultado = bookDao.getBookByFirebaseId("firebase_doc_abc123")
+
+        assertNotNull("el libro tiene que encontrarse", resultado)
+        assertEquals("Never Lie", resultado!!.title)
+        assertEquals("firebase_doc_abc123", resultado.firebaseId)
     }
 }

@@ -15,6 +15,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.verifyNoInteractions
+import kotlinx.coroutines.runBlocking
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class AuthViewModelTest {
@@ -56,5 +57,43 @@ class AuthViewModelTest {
         )
         //comprobamos que Firebase no fue llamado en ningún momento
         verifyNoInteractions(authRepository)
+    }
+
+    @Test
+    fun registroConContraseniaCortaEmiteError() {
+        //llamamos a register cib cibtraseña de solo 3 caracteres
+        viewModel.register("Marta", "marta@gmail.com", "123")
+
+        //comprobamos que el estado es error
+        val estado = viewModel.authState.value
+        assertTrue(
+            "El estado debe ser AuthState.Error",
+            estado is AuthState.Error
+        )
+        assertEquals(
+            "La contraseña debe tener al menos 6 caracteres.",
+            (estado as AuthState.Error).message
+        )
+        //comprobamos que Firebase no fue llamado en ningún momento
+        verifyNoInteractions(authRepository)
+    }
+
+    @Test
+    fun loginConCredencialesIncorrectasEmiteError() = runBlocking{
+        //configuramos el mock para que devuelva error de credenciales
+        org.mockito.kotlin.whenever(
+            authRepository.login("marta@gmail.com", "contraseniaincorrecta")
+        ).thenReturn(com.lecturaviva.app.util.Result.Error("Correo o contraseña incorrectos."))
+
+        //llamamos al login con credenciales incorrectas
+        viewModel.login("marta@gmail.com", "contraseniaincorrecta")
+
+        //comprobamos que el estado es error
+        val estado = viewModel.authState.value
+        assertTrue("El estado debe ser AuthState.Error", estado is AuthState.Error)
+        assertEquals(
+            "Correo o contraseña incorrectos.",
+            (estado as AuthState.Error).message
+        )
     }
 }
